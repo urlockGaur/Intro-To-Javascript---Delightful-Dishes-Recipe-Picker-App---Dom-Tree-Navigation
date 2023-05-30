@@ -1,0 +1,129 @@
+:root {
+    --cust-color-main: #E76F51;
+    --cust-color-accent:  #F4A261;  
+    --cust-color-text: #1E1E24;
+    --cust-color: #E9C46A;
+    --cust-color-background: #EAEAEB;
+    --cust-max-width: 1500px
+}
+
+body {
+  background-color: var(--cust-color-background);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Advent Pro', sans-serif;
+  
+}
+
+header{
+  height: 100px;
+  background-color: var(--cust-color-accent);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header h1{
+  text-align: center;
+  justify-content: center;
+  color: var(--cust-color-main);
+  font-size: 75px;
+}
+img {
+    
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    
+}
+
+.recipeCards .hidden {
+    display: none;
+  }
+  
+ #wrapper{
+  max-width: var(--cust-max-width);
+  margin: 0 auto;
+ }
+#container{
+    vertical-align: top;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: var(--cust-max-width);
+    background-color: var(--cust-color-main);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+
+.recipeCardDisplay{
+ margin: 0  auto;
+ text-align: center;
+ 
+}
+  .recipeCards {
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    vertical-align: top;
+    margin: 20px 10px;
+    border: 5px solid var(--cust-color);
+    padding: 20px;
+    width: 300px;
+    background-color: var(--cust-color-background);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    color: var(--cust-color-text);
+   
+    
+  }
+  
+  .recipeCards img {
+    border: 10px solid var(--cust-color-accent);
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+  }
+  
+  .recipeCards ul {
+    margin-left: 20px;
+  }
+  
+  .recipeCards.selected {
+    height: auto;
+    width: 300x;
+    transition: ease .5; 
+  }
+  /* lines 99 to 129 are for animations*/
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+  
+
+  main {
+    animation: 1s ease-out 0s 1 slideInLeft;
+  }
+
+  header {
+    animation: bounce 1s ease-out forwards;
+  }
